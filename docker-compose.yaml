@@ -1,0 +1,9 @@
+services:
+  qnetd:
+    container_name: proxmox-qdevice
+    build: .
+    ports:
+      - "5403:5403"
+    volumes:
+      - /opt/corosync:/etc/corosync
+    restart: unless-stopped
